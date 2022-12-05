@@ -1,0 +1,213 @@
+* reset and custom style classes */
+/*
+1. Use a more-intuitive box-sizing model.
+*/
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+/*
+2. Remove default margin
+*/
+* {
+    margin: 0;
+}
+/*
+3. Allow percentage-based heights in the application
+*/
+html, body {
+    min-height: 100%;
+    font-size: 15px;
+    font-family: var(--ff-base);
+}
+/*
+Typographic tweaks!
+4. Add accessible line-height
+5. Improve text rendering
+*/
+body {
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+    font-family: var(--ff-base);
+}
+/*
+6. Improve media defaults
+*/
+img, picture, video, canvas, svg {
+    display: block;
+    max-width: 100%;
+}
+/*
+7. Remove built-in form typography styles
+*/
+input, button, textarea, select {
+    font: inherit;
+}
+/*
+8. Avoid text overflows
+*/
+p, h1, h2, h3, h4, h5, h6 {
+    overflow-wrap: break-word;
+}
+/*
+9. Create a root stacking context
+*/
+#root, #__next {
+    isolation: isolate;
+}
+
+
+/* Root Styles */
+:root {
+    --clr-trnsprnt-white-prgph:  hsla(0, 0%, 100%, 0.75);
+    --clr-lght-gray-bkgrnd-hd-btn: hsl(0, 0%, 95%);
+
+    --clr-brght-orng: hsl(31, 77%, 52%);
+
+    --clr-drk-cyan: hsl(184, 100%, 22%);
+    --clr-vry-drk-cyan: hsl(179, 100%, 13%);
+    
+
+    --ff-base: 'Lexend Deca', sans-serif;
+    --ff-ascent: 'Big Shoulders Display', cursive;
+
+    --transition: 300ms ease-in-out;
+
+    --fw-reg: 400;
+    --fw-bold: 700;
+}
+
+/* general styles */
+
+.grid {
+    display: grid;
+}
+
+.flex {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.flex_column {
+    display: flex;
+    flex-direction: column;
+}
+
+.center_by_flex {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.center_by_grid {
+    display: grid;
+    place-content: center;
+}
+
+.inactive {
+    display: none;
+}
+
+.opacity {
+    opacity: 1;
+}
+
+/* body */
+body {
+    min-height: 100vh;
+    background-color: var(--clr-lght-gray-bkgrnd-hd-btn);
+    padding: 2.5em 1.5em;
+}
+
+/* main card */
+main {
+    border-radius: 1rem;
+    overflow: hidden;
+    background-color: lightblue;
+    max-width: 22rem;
+}
+
+/* vehicle cards */
+.container {
+    gap: 20px;
+    padding: 3em;
+    max-width: 16rem;
+}
+
+.info_container {
+    gap: 20px;
+}
+
+.container.sedan {
+    background-color: var(--clr-brght-orng);
+}
+
+.container.suvs {
+    background-color: var(--clr-drk-cyan);
+}
+
+.container.luxury {
+    background-color: var(--clr-vry-drk-cyan);
+}
+
+.info_container h1 {
+    text-transform: uppercase;
+    font-family: var(--ff-ascent);
+    color: var(--clr-trnsprnt-white-prgph);
+    font-weight: var(--fw-bold);
+    font-size: 2.5rem;
+}
+
+.info_container p {
+    color: var(--clr-trnsprnt-white-prgph);
+}
+
+/* button */
+.btn {
+    padding: 1em 2.5em;
+    border-radius: 4rem;
+    border: none;
+    outline: none;
+    background-color: var(--clr-lght-gray-bkgrnd-hd-btn);
+    font-size: 1rem;
+}
+
+.sedan .btn {
+    color: var(--clr-brght-orng);
+}
+
+.suvs .btn {
+    color: var(--clr-drk-cyan);
+}
+
+.luxury .btn {
+    color: var(--clr-vry-drk-cyan);
+}
+
+/* button active */
+.btn:hover {
+    cursor: pointer;
+    border: 2px solid var(--clr-lght-gray-bkgrnd-hd-btn);
+    color: var(--clr-lght-gray-bkgrnd-hd-btn);
+}
+
+.sedan .btn:hover {
+    background-color: var(--clr-brght-orng);
+}
+
+.suvs .btn:hover {
+    background-color: var(--clr-drk-cyan);
+}
+
+.luxury .btn:hover {
+    background-color: var(--clr-vry-drk-cyan);
+}
+
+@media screen and (min-width: 900px) {
+    main {
+        max-width: 60rem;
+    }
+
+    .container {
+        max-width: 13rem;
+    }
+}
