@@ -202,12 +202,12 @@ main {
     background-color: var(--clr-vry-drk-cyan);
 }
 
-@media screen and (min-width: 900px) {
+@media screen and (min-width: 768px) {
     main {
         max-width: 60rem;
     }
 
     .container {
-        max-width: 13rem;
+        flex: 1;
     }
 }
